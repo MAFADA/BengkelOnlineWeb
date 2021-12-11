@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\Models\Product;
+
 class HomeController extends Controller
 {
     /**
@@ -23,7 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $user = Auth::user();
-        return view('home', ['user' => $user]);
+        $user = Auth::user();        
+        $products = Product::paginate(20);        
+
+        return view('home', compact('products') ,['user' => $user]);
     }
 }

@@ -10,11 +10,11 @@ class Order extends Model
     use HasFactory;
 
    public function users(){
-       return $this->belongsTo(User::class, 'id');
+       return $this->belongsTo(User::class, 'user_id','id');
    }
 
    public function order_details(){
-       return $this->hasMany(Order_Detail::class,'id');
+       return $this->hasMany(Order_Detail::class,'order_id','id');
    }
    
 

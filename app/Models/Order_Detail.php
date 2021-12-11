@@ -10,10 +10,10 @@ class Order_Detail extends Model
     use HasFactory;
 
     public function products(){
-        return $this->belongsTo(Product::class, 'id');
+        return $this->belongsTo(Product::class, 'product_id','id');
     }
 
     public function order(){
-        return $this->belongsTo(Order::class,'id');
+        return $this->belongsTo(Order::class,'order_id','id');
     }
 }
