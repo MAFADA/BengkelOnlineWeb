@@ -59,9 +59,11 @@
                                 </a>                                
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    @can('manage-users')
                                     <a class="dropdown-item" href="{{ route('home') }}">
                                         {{ __('Dashboard') }}
                                     </a>    
+                                    @endcan
 
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
