@@ -10,11 +10,9 @@
                 <div class="card-body">
                     <h5 class="card-title">{{$p->product_name}}</h5>
                     <p class="card-text">
-                        <strong>Harga   :</strong> Rp. {{number_format($p->price)}} <br>
-                        <!-- <strong>Stock   :</strong> {{$p->stock}}<br> -->
-                        <!-- {{$p->description}} -->
+                        <strong>Harga   :</strong> Rp. {{number_format($p->price)}} <br>                        
                     </p>
-                    <a href="#" class="btn btn-primary"><i class="fa fa-eye"></i> Detail</a>
+                    <a href="/customer/{{$p->id}}" class="btn btn-primary"><i class="fa fa-eye"></i> Detail</a>
                 </div>
             </div>
         </div>        

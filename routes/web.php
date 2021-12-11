@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Cust\CustomerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,5 +18,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+
+Route::resource('customer', CustomerController::class);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
