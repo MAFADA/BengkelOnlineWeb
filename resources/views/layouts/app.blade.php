@@ -41,7 +41,22 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
-                        @guest
+                                <li class="nav-item">
+                                <?php
+                                    $order_utama = \App\Models\Order::where('cust_id',Auth::user()->id)->where('status',0)->first();
+                                    if (!empty($order_utama)) {
+                                        $notif= \App\Models\OrderDetail::where('order_id',$order_utama->id)->
+                                            count();                                        
+                                    }
+                                ?>
+                                    <a class="nav-link" href="{{ route('order.checkout') }}">
+                                        <i class="fa fa-shopping-cart"></i>
+                                        @if(!empty($notif))
+                                        <span class="badge badge-danger">{{$notif}}</span>
+                                        @endif
+                                    </a>
+                                </li>
+                        @guest                                
                             @if (Route::has('login'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -88,5 +103,8 @@
             @yield('content')
         </main>
     </div>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    @include('sweet::alert')
+
 </body>
 </html>

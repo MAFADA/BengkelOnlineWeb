@@ -17,6 +17,7 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->unsignedBigInteger('cust_id')->nullable();
             $table->foreign('cust_id')->references('id')->on('users');
+            $table->date('orderdate')->nullable();
             $table->string('status');
             $table->integer('total_price');
             $table->timestamps();

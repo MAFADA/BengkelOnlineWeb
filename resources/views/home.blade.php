@@ -12,7 +12,7 @@
                     <p class="card-text">
                         <strong>Harga   :</strong> Rp. {{number_format($p->price)}} <br>                        
                     </p>
-                    <a href="/customer/{{$p->id}}" class="btn btn-primary"><i class="fa fa-eye"></i> Detail</a>
+                    <a href="/order/{{$p->id}}" class="btn btn-primary"><i class="fa fa-eye"></i> Detail</a>
                 </div>
             </div>
         </div>        

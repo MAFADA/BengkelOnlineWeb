@@ -32,24 +32,20 @@
                                             <td>:</td>
                                             <td>{{$product->description}}</td>
                                         </tr>
-                                        <form action="" method="post">
                                         <tr>
                                             <td>Quantity</td>
                                             <td>:</td>
                                             <td>
-                                                <input type="text" name="qty" class="form-control"
-                                                required="">
+                                                <form action="{{url('order')}}/{{$product->id}}" method="post">
+                                                    @csrf
+                                                    <input type="text" name="qty" class="form-control"
+                                                    required="">
+                                                    <button type="submit" class="btn btn-primary mt-2"><i class="fa fa-shopping-cart"></i> 
+                                                    Add to Cart</button>
+                                                </form>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td>
-                                                <button type="submit" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> 
-                                                Add to Cart</button>
-                                            </td>
-                                        </tr>
-                                        </form>
+                                        
                                     </tbody>
                                 </table>
                             </div>

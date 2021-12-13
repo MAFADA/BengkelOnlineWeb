@@ -15,8 +15,10 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        //
+        
     }
+
+    
 
     /**
      * Show the form for creating a new resource.
@@ -47,9 +49,7 @@ class CustomerController extends Controller
      */
     public function show($id)
     {
-        $product = Product::where('id',$id)->first();
-
-        return view('user.customer.showProduct', compact('product'));
+        
     }
 
     /**
